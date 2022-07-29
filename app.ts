@@ -18,6 +18,9 @@ app.use(cors());
 const server = http.createServer(app);
 const io = new Server(server, {
   path: "/socket.io",
+  cors: {
+    origin: "http://localhost:3000",
+  },
 });
 
 // 소켓 로직
@@ -35,7 +38,8 @@ io.on("connection", (socket: any) => {
     socket.to(data.room).emit("receive_message", data);
     // data = { room: "2208267975_2208267975",
     //          author: "윤지", authorId: "123456",
-    //          targetAuthor: "태성", targetAuthorId: "654321", message: "d", time: "16:46" }
+    //          targetAuthor: "태성", targetAuthorId: "654321",
+    //          message: "d", time: "16:46" }
 
     console.log("이게 메세지 일까요??", data);
   });
