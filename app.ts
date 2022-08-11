@@ -103,7 +103,7 @@ io.on("connection", (socket: any) => {
 
 // 테스트용
 app.get("/", (req: any, res: any) => {
-  res.send("good");
+  res.send("good hi");
 });
 
 // 서버 열기
