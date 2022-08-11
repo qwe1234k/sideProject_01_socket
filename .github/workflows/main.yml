@@ -24,9 +24,7 @@ jobs:
           script: |
             cd /home/ubuntu/sideProject_01_socket
             # git config --global --add safe.directory /home/ubuntu/sideProject_01_socket
-            git fetch --all
-            git reset --hard origin/master
-            # sudo git pull
+            sudo git pull
             # sudo npm update
             sudo npm install
             sudo pm2 reload all
